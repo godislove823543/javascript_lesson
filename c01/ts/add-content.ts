@@ -1,5 +1,5 @@
 let my_name = "Sc"; //
-console.log(my_name);
+console.log(my_name); //console 控制台
 var xxx_name = "Chang";
 console.log(xxx_name);
 
