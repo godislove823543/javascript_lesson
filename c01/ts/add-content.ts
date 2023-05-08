@@ -17,4 +17,4 @@ if(hourNow > 13 ){
     greeting='hahaha where are you??';
 }
 
-document.write('<h3>' + greeting + '</h3>')
+document.write('<h3>' + greeting + '</h3>') //這是用程式寫的h3
