@@ -1,3 +1,4 @@
+let sareaElement=document.getElementById('sarea')
 function reqListener() {
     let youbikedata=JSON.parse(this.responseText);
     let sarea_array=[]
@@ -6,7 +7,13 @@ function reqListener() {
         sarea_array.push(youbike.sarea)
     }
     sarea_array=[...new Set(sarea_array)] //set裡的資料不能重複
-    console.log(sarea_array)
+    // console.log(sarea_array)
+    //一個一個抓
+    for(const area of sarea_array){
+        let optionElement=document.createElement('option')
+        optionElement.textContent=area
+        sareaElement.appendChild(optionElement)//附加元件
+    }
 }
 
 const windowload = (event) => {
