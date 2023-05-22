@@ -32,7 +32,7 @@ sareaElement.addEventListener('change', (event) => {
                 trHTML += "<td>" + element.bemp +"</td>"
                 trHTML += "<td>" + element.updateTime + "</td>"
                 trHTML += "<td>" + status +"</td>"
-                trHTML += `<td><a class="map" href="#" data-sno=${element.sno}>更多</a></td>`
+                trHTML += `<td><a class="map" href="#" data-lat=${element.lat} data-lng=${element.lng}>更多</a></td>`
                 trHTML += "</tr>"
             }
 
@@ -47,6 +47,7 @@ sareaElement.addEventListener('change', (event) => {
             element.addEventListener('click',(event)=>{
                 event.preventDefault()
                 let aElement = event.currentTarget
+                open('https://www.google.com/maps/place/'+aElement.dataset.lat+','+aElement.dataset.lng)
                 //console.log(aElement.dataset.sno)
                 mapElement.className = 'overlay'
                 youbikedata.forEach(site=>{
