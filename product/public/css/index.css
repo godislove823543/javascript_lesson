@@ -37,4 +37,10 @@
     /* grid-row: 3/4;
     grid-column: 1/span 2; */
     grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /*不要自動換行*/
+    justify-content: center;
+    align-items: center; /*上下置中*/
+    
 }
