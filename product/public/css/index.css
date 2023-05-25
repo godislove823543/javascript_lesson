@@ -44,6 +44,7 @@
 .main{
     background-color: rgb(143, 185, 171);
     grid-area: main;
+    padding: 5em;
 }
 
 .footer{

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>產品</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/index.js" type="module"></script> <!--module會把所有東西下載完 再執行-->
 </head>
 <body>
@@ -22,7 +22,24 @@
             </ul>
         </nav> <!--導覽列-->
         <main class="main">
-            <h1>Main</h1>
+            
+            <!-- https://getbootstrap.com/docs/5.3/forms/overview/ -->
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">產品名稱</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
         </main>
         <footer class="footer">
             <h1>footer</h1>
