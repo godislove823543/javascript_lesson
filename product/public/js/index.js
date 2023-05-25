@@ -17,8 +17,16 @@ const validateName=()=>{ //驗證name函數
       allOfDataArray.push({'productName':productName} )//key:value
 }
 
+const clearAllAlertAndData=()=>{
+    //清除產品警告
+    let nameAlertElement=document.querySelector('#nameAlert')
+    nameAlertElement.classList.add("close")
+    //清除收集的資料(舊資料 警告訊息)
+    allOfDataArray=[]
+}
 
 formElement.addEventListener('submit',(event)=>{
+    clearAllAlertAndData()
     event.preventDefault() //先不要動
     validateName()
     console.log(allOfDataArray) //收集填寫的資料
