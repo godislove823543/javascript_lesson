@@ -1,7 +1,7 @@
 #container{
     display: grid;
     grid-template-columns: 200px 1fr;
-    grid-template-rows: 8em 500px 8em; /*行 最上面那一條*/
+    grid-template-rows: 8em auto 8em; /*行 最上面那一條*/
     grid-template-areas: 
     "header header"
     "nav main"
@@ -24,6 +24,22 @@
     background-color: rgb(174, 157, 189);
     grid-row: 2/3; /*2~3*/
     grid-column: 1/2; /*or 1/span1 橫跨一格*/
+}
+
+.nav ul{
+    list-style-type:none ;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a{
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(241, 235, 234);
+    font-weight: bold;
+    
 }
 
 .main{
