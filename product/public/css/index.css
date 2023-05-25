@@ -60,6 +60,11 @@
     
 }
 
+form.nameAlert{
+    color: chocolate;
+    font-size: 0;
+}
+
 /*bootstrap>layout>breakpoint*/
 /* 手機橫向*/
 @media (min-width: 576px) {  }
