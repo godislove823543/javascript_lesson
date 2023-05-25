@@ -8,6 +8,11 @@
     "footer footer";
 }
 .header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /*不要自動換行*/
+    justify-content: center;
+    align-items: center; /*上下置中*/
     background-color: rgb(188, 107, 107);
     grid-row-start: 1;
     grid-row-end: 2;
