@@ -60,9 +60,14 @@
     
 }
 
-form.nameAlert{
-    color: chocolate;
-    font-size: 0;
+form .alert{
+    color: red;
+    font-size: 0.8em;
+}
+
+/* close可以拿掉 */
+form .close{
+    display: none;
 }
 
 /*bootstrap>layout>breakpoint*/
