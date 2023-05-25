@@ -1,11 +1,14 @@
+/* 手機直的 */
 #container{
     display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 8em auto 8em; /*行 最上面那一條*/
+    grid-template-columns: 1fr;
+    grid-template-rows: 8em auto auto 8em; /*行 最上面那一條*/
     grid-template-areas: 
-    "header header"
-    "nav main"
-    "footer footer";
+    "header"
+    "nav "
+    "main"
+    "footer ";
+    width: 100%;
 }
 .header{
     display: flex;
@@ -14,16 +17,12 @@
     justify-content: center;
     align-items: center; /*上下置中*/
     background-color: rgb(188, 107, 107);
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area: header;
 }
 
 .nav{
     background-color: rgb(174, 157, 189);
-    grid-row: 2/3; /*2~3*/
-    grid-column: 1/2; /*or 1/span1 橫跨一格*/
+    grid-area: nav;
 }
 
 .nav ul{
@@ -44,8 +43,7 @@
 
 .main{
     background-color: rgb(143, 185, 171);
-    grid-row: 2/3;
-    grid-column: 2/3;
+    grid-area: main;
 }
 
 .footer{
@@ -60,3 +58,93 @@
     align-items: center; /*上下置中*/
     
 }
+
+/*bootstrap>layout>breakpoint*/
+/* 手機橫向*/
+@media (min-width: 576px) {  }
+
+/*平板 */
+@media (min-width: 768px) { 
+    #container{
+        display: grid;
+        grid-template-columns:200px 1fr;
+        grid-template-rows: 8em auto  8em; /*行 最上面那一條*/
+        grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+        width: 100%;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /*不要自動換行*/
+        justify-content: center;
+        align-items: center; /*上下置中*/
+        background-color: rgb(188, 107, 107);
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    .nav{
+        background-color: rgb(174, 157, 189);
+        grid-row: 2/3; /*2~3*/
+        grid-column: 1/2; /*or 1/span1 橫跨一格*/
+    }
+    
+    .nav ul{
+        list-style-type:none ;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav a{
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+        text-align: center;
+        color: rgb(241, 235, 234);
+        font-weight: bold;
+        
+    }
+    
+    .main{
+        background-color: rgb(143, 185, 171);
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+    
+    .footer{
+        background-color: rgb(248, 211, 155);
+        /* grid-row: 3/4;
+        grid-column: 1/span 2; */
+        grid-area: footer;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /*不要自動換行*/
+        justify-content: center;
+        align-items: center; /*上下置中*/
+        
+    }
+ }
+
+/*筆電*/
+@media (min-width: 992px) {  }
+
+/*桌機*/
+@media (min-width: 1200px) { 
+    #container{
+        width: 1140px;
+        margin: 0 auto;
+    }
+ }
+
+/*電競*/
+@media (min-width: 1400px) { 
+    #container{
+        width: 1320px;
+        margin:0 auto;
+    }
+ }
