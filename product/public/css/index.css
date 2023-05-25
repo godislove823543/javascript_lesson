@@ -1,7 +1,11 @@
 #container{
     display: grid;
-    grid-template-columns: 200px 500px;
-    grid-template-rows: 100px 500px 100px; /*行*/
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 8em 500px 8em; /*行 最上面那一條*/
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
 }
 .header{
     background-color: rgb(188, 107, 107);
@@ -25,6 +29,7 @@
 
 .footer{
     background-color: rgb(248, 211, 155);
-    grid-row: 3/4;
-    grid-column: 1/span 2;
+    /* grid-row: 3/4;
+    grid-column: 1/span 2; */
+    grid-area: footer;
 }
