@@ -26,15 +26,15 @@
         <div class="mb-3">
           <label for="inputName" class="form-label">產品名稱</label>
           <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
-          <div id="nameHelp" class="form-text">產品名稱要祥細</div>
-          <p id="nameAlert" class="alert close">產品名稱一定要填寫</p>
+          <div id="nameHelp" class="form-text">產品名稱要詳細</div>
+          <p id='nameAlert' class="alert close">*產品名稱一定要填寫</p>
         </div>
         <div class="mb-3">
           <label for="InputCode" class="form-label">產品編號</label>
-          <input type="text" class="form-control" id="InputCode" aria-describedby="codeHelp">
+          <input type="text" class="form-control" id="inputCode" aria-describedby="codeHelp">
           <div id="codeHelp" class="form-text">xxx-xxx-xxx</div>
+          <p id="codeAlert" class="alert close">*格式不符合</p>
         </div>
-        <p id="codeAlert" class="alert close">格式不符合</p>
         
         <p>類別</p>
         <div class="form-check form-check-inline">
@@ -62,10 +62,10 @@
           <label class="form-check-label" for="warrantyDate">保存期限</label>
           <input type="date" class="form-check-input" id="warrantyDate">          
         </div>
-        
-        <button type="submit" class="btn btn-primary">送出</button>
-      </form>
 
+        <button type="submit" class="btn btn-primary">送出</button>
+        
+      </form>
     </main>
     <footer class="footer">
       <h1>Footer</h1>

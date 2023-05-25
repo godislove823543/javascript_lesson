@@ -1,53 +1,49 @@
-let formElement=document.querySelector('#form') //選id要用#
+let formElement = document.querySelector('#form')
 
-let allOfDataArray=[];
+let allOfDataArray = [];
 
-const validateName=()=>{ //驗證name函數
-    let inputNameElement=document.querySelector('#inputName')
-    let productName=inputNameElement.value
-    let nameAlertElement=document.querySelector('#nameAlert')
-    //沒填資料的話 顯示警告訊息
-    if(productName.length ==0){
-       //看主控台 填資料 點送出按鈕
-        console.log("沒有填資料")
-        nameAlertElement.classList.remove('close') //把alert close的close移除
-        return  //沒有填寫就跳出 
+const validateName = ()=>{
+    let inputNameElement = document.querySelector('#inputName')
+    let nameAlertElement = document.querySelector('#nameAlert')
+    let productName = inputNameElement.value
+    if (productName.length == 0){
+        //console.log("沒有填資料")
+        nameAlertElement.classList.remove("close")
+        return
     }
-      console.log(productName) 
-      allOfDataArray.push({'productName':productName} )//key:value
+    allOfDataArray.push({'productName':productName})
 }
 
-const clearAllAlertAndData=()=>{
+const validateCodeFormat = () =>{
+    let inputCodeElement = document.querySelector('#inputCode')
+    let codeAlertElement = document.querySelector('#codeAlert')
+    let inputCodeValue = inputCodeElement.value
+    console.log(inputCodeValue)
+    if (inputCodeValue.length == 0){
+        //console.log("沒有填資料")
+        codeAlertElement.classList.remove("close")
+        return
+    }
+    allOfDataArray.push({'code':inputCodeValue})
+}
+
+const clearAllAlertAndData = ()=>{
     //清除產品警告
-    let nameAlertElement=document.querySelector('#nameAlert')
+    let nameAlertElement = document.querySelector('#nameAlert')
     nameAlertElement.classList.add("close")
 
     //清除code警告
-    let codeAlertElement=document.querySelector('#codeAlert')
-    codeAlertElement.add("close")
+    let codeAlertElement = document.querySelector('#codeAlert')
+    codeAlertElement.classList.add("close")
 
-    //清除收集的資料(舊資料 警告訊息)
-    allOfDataArray=[]
-}
-
-const validateCodeFormat=()=>{ //在 產品編號那
-    let inputCodeElement=document.querySelector('#inputCode')
-    let codeAlertElement=document.querySelector('#codeAlert')
-    let inputCodeValue=inputCodeElement.value //輸入資料
-    console.log(inputCodeValue)
-    if(inputCodeValue.length ==0){
-        //看主控台 填資料 點送出按鈕
-         console.log("沒有填資料")
-         inputCodeElement.classList.remove('close') //把alert close的close移除
-         return  //沒有填寫就跳出 
-     }
-     allOfDataArray.push('code':inputCodeValue) //把輸入的資料放進陣列李
+    //清除收集的資料
+    allOfDataArray = []
 }
 
 formElement.addEventListener('submit',(event)=>{
     clearAllAlertAndData()
-    event.preventDefault() //先不要動
+    event.preventDefault()
     validateName()
     validateCodeFormat()
-    console.log(allOfDataArray) //收集填寫的資料
+    console.log(allOfDataArray)
 })
