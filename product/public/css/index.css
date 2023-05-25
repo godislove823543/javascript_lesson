@@ -1,15 +1,30 @@
+#container{
+    display: grid;
+    grid-template-columns: 200px 500px;
+    grid-template-rows: 100px 500px 100px; /*行*/
+}
 .header{
     background-color: rgb(188, 107, 107);
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .nav{
     background-color: rgb(174, 157, 189);
+    grid-row: 2/3; /*2~3*/
+    grid-column: 1/2; /*or 1/span1 橫跨一格*/
 }
 
 .main{
     background-color: rgb(143, 185, 171);
+    grid-row: 2/3;
+    grid-column: 2/3;
 }
 
 .footer{
     background-color: rgb(248, 211, 155);
+    grid-row: 3/4;
+    grid-column: 1/span 2;
 }
