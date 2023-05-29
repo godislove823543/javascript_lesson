@@ -15,8 +15,16 @@ const firebaseConfig = {
   const db=getFirestore(app);
 
   const querySnapshot = await getDocs(collection(db, "products"));
+  let contents=""
+
   querySnapshot.forEach(doc => {
     console.log(doc.id)
     let documentData=doc.data()
     console.log(documentData['productName'])
+    contents += `<tr><th scope="row">${doc.id}</th><td>${documentData['productName']}</td><td>${documentData['code']}</td></tr>`
   });
+  let tbodyElement=document.querySelector('#tbody')
+  tbodyElement.innerHTML=contents
+
+  //去這裡查資料https://firebase.google.com/docs/firestore/quickstart?authuser=0&hl=zh
+
