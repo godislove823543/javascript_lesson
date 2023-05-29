@@ -12,7 +12,9 @@ const firebaseConfig = {
     measurementId: "G-3DKN0JY6VR"
   };
   const app = initializeApp(firebaseConfig);
-  
+
+  ///////////////////////////////以上都是在firebase複製過來的
+
 let formElement = document.querySelector('#form')
 let allOfDataArray = [];
 
