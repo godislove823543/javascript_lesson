@@ -15,7 +15,8 @@ const setupCurrentDate = () => {
 
     let dateElement = document.querySelector('#warrantyDate')
     dateElement.value = current_date_string
-    dateElement.min = current_date_string //讓最近日期為今日
+    dateElement.min = current_date_string
+
 }
 
 //setup現在的日期
@@ -55,7 +56,7 @@ const checkRadioValue = () => {
     radionElements.forEach(element => {
         if(element.checked){
             //console.log(element.value)
-            allOfDataArray.push({'catgory':element.value})
+            allOfDataArray.push({'category':element.value})
         }
     })
 }
@@ -69,9 +70,10 @@ const warrantyCheck = () =>{
     }
 }
 
-const getWarrantyDate=()=>{
+const getWranntyDate = () => {
     let dateElement = document.querySelector('#warrantyDate')
     allOfDataArray.push({'warrantyDate':dateElement.value})
+}
 
 const clearAllAlertAndData = ()=>{
     //清除產品警告
@@ -86,17 +88,16 @@ const clearAllAlertAndData = ()=>{
     allOfDataArray = []
 }
 
-const setEmpty =()=>{
+const setEmpty = () => {
     let inputNameElement = document.querySelector('#inputName')
-    inputNameElement.value=""
+    inputNameElement.value = ""
     let inputCodeElement = document.querySelector('#inputCode')
-    inputCodeElement.value=""
-    let radio1Element=document.querySelector('#inlineRadio1')
-    radio1Element.checked=true
-    let checkboxElement=document.querySelector('#warrantyCheck1')
-    checkboxElement.checked=false
+    inputCodeElement.value = ""
+    let radio1Element = document.querySelector('#inlineRadio1')
+    radio1Element.checked = true
+    let checkboxElement = document.querySelector('#warrantyCheck1')
+    checkboxElement.checked = false
     setupCurrentDate()
-
 }
 
 formElement.addEventListener('submit',(event)=>{
@@ -106,7 +107,7 @@ formElement.addEventListener('submit',(event)=>{
     validateCodeFormat()
     checkRadioValue()
     warrantyCheck()
-    getWarrantyDate()
+    getWranntyDate()
     console.log(allOfDataArray)
     setEmpty()
 })
