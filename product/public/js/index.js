@@ -86,6 +86,19 @@ const clearAllAlertAndData = ()=>{
     allOfDataArray = []
 }
 
+const setEmpty =()=>{
+    let inputNameElement = document.querySelector('#inputName')
+    inputNameElement.value=""
+    let inputCodeElement = document.querySelector('#inputCode')
+    inputCodeElement.value=""
+    let radio1Element=document.querySelector('#inlineRadio1')
+    radio1Element.checked=true
+    let checkboxElement=document.querySelector('#warrantyCheck1')
+    checkboxElement.checked=false
+    setupCurrentDate()
+
+}
+
 formElement.addEventListener('submit',(event)=>{
     clearAllAlertAndData()
     event.preventDefault()
@@ -95,4 +108,5 @@ formElement.addEventListener('submit',(event)=>{
     warrantyCheck()
     getWarrantyDate()
     console.log(allOfDataArray)
+    setEmpty()
 })
