@@ -9,21 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css"> 
     <script type="module" src="js/stock.js">
-        fetch(new Request('codeSearch.json'))
-        .then((response)=>{
-            return response.json()
-        }).then((r)=>{
-            r.forEach(element=>{ //一直執行 看有多少個
-                let name=element.name
-                let code=element.code
-                let stockName=`${code}-${name}`
-            let selectedElement=document.querySelector('#stockSelect')
-        let optionElement=document.createElement("option")
-        optionElement.value=code
-        optionElement.innerText=name
-        selectedElement.appendChild(optionElement)
-    })
-        })
+       
         
     </script>
 </head>
@@ -50,9 +36,9 @@
                 
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupFile02">請選擇年月</label>
-                    <input type="month" class="form-control" id="inputGroupFile02" min="2023-05">
+                    <input type="month" class="form-control" id="inputGroupFile02" min="2000-01">
                 </div>
-                
+
                 <button class="btn btn-outline-secondary" type="submit">送出</button>
                 </form>
              
